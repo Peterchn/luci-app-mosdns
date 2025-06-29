@@ -115,12 +115,12 @@ DOWNLOAD() (
 INSTALL() (
 	# Install
 	echo -e "\r\n${GREEN_COLOR}Install Packages ...${RES}\r\n"
-	apk add --force-overwrite $TMPDIR/geoip.ipk
-	apk add --force-overwrite $TMPDIR/geosite.ipk
-	apk add $TMPDIR/v2dat_$platform.ipk
-	apk add $TMPDIR/mosdns_$platform.ipk
-	apk add $TMPDIR/luci-app-mosdns.ipk
-	apk add $TMPDIR/luci-i18n-mosdns-zh-cn.ipk
+	apk add --allow-untrusted --force-overwrite $TMPDIR/geoip.ipk
+	apk add --allow-untrusted --force-overwrite $TMPDIR/geosite.ipk
+	apk add --allow-untrusted $TMPDIR/v2dat_$platform.ipk
+	apk add --allow-untrusted $TMPDIR/mosdns_$platform.ipk
+	apk add --allow-untrusted $TMPDIR/luci-app-mosdns.ipk
+	apk add --allow-untrusted $TMPDIR/luci-i18n-mosdns-zh-cn.ipk
 	rm -rf $TMPDIR /tmp/luci-*
 	echo -e "${GREEN_COLOR}Done!${RES}"
 )
